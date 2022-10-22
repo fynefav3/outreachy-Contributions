@@ -1,7 +1,7 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 const Header = (props) => {
   const drawerWidth = 240;
   
+  const location = useLocation();
 
   const navItems = [
     { name: "Home", route: "/" },
@@ -102,7 +103,7 @@ const Header = (props) => {
                 <Button
                   key={item.name}
                   sx={{
-                    ...(item.name === "Home"
+                    ...(item.route === location.pathname
                       ? {
                           color: "#8C1A11",
                           fontWeight: "bold",
@@ -129,7 +130,7 @@ const Header = (props) => {
                         height: 8,
                         width: 8,
                         borderRadius: 4,
-                        ...(item.name === "Home"
+                        ...(item.route === location.pathname
                           ? {
                               bgcolor: "#8C1A11",
                             }

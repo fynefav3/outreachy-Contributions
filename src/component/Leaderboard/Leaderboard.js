@@ -3,7 +3,7 @@ import { DataGrid, GridColDef} from "@mui/x-data-grid";
 
 const Leaderboard = () => {
   const columns: GridColDef[] = [
-    { field: "id", headerName: "SN", width: 100, backgroundColor: "#00000"},
+    { field: "id", headerName: "SN", width: 100},
     { field: "user", headerName: "User", width: 1000},
     { field: "edit", headerName: "Edits", width: 120 },
   ];

@@ -1,3 +1,4 @@
+import * as React from "react";
 import Box from "@mui/material/Box";
 
 function Footer() {
@@ -9,9 +10,15 @@ function Footer() {
         py={{ xs: 2, sm: "17px" }}
         color="#8C1A11"
         display="flex"
+        backgroundColor= "#ffffff"
         justifyContent={"center"}
+        sx={{marginTop: 'calc(10% + 60px)',
+position: 'fixed',
+bottom: 0,
+width: '100%'
+}}
       >
-        <p>Ihuoma Favour Agbaru &copy; {currentYear}  </p>
+        <p>Ihuoma Favour Agbaru &copy; {currentYear} </p>
       </Box>
     </footer>
   );
