@@ -11,12 +11,23 @@ import TableRow from "@mui/material/TableRow";
 import List from "@mui/material/List";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
+import { useNavigate } from "react-router-dom";
 
 function createData(sn, tools) {
   return { sn, tools };
 }
 
-const rowsy = [
+function createTool(header, subHeading, author) {
+  return {
+    header,
+    subHeading,
+    author,
+  };
+}
+
+const valueList = [
   createData(1, "Wikidata Todo"),
   createData(2, "Find duplicate items"),
   createData(3, 'The Wikidata Game"'),
@@ -39,82 +50,110 @@ function Record() {
     { value: 15, header: "∑MISSING / ∑TOTAL", subHeading: "%" },
   ];
 
-  const rowsss = [
-    {
-      header: "Wikidata Todo",
-      subHeading: "Shows you little things you can do on Wikidata.",
-      author: "Magnus Manske",
-    },
-    {
-      header: "Find duplicate items",
-      subHeading: "Find duplicate items on Wikidata, via labels/aliases.",
-      author: "Magnus Manske",
-    },
-    {
-      header: "The Wikidata Game",
-      subHeading: "A set of games to quickly add statements to Wikidata.",
-      author: "Magnus Manske",
-    },
-    {
-      header: "ShExStatements",
-      subHeading:
-        "ShExStatements allows the users to generate entity schemas and shape expressions from simple CSV statements.",
-      author: "Jsamwrites",
-    },
-    {
-      header: "Harvesting Data Refinery",
-      subHeading:
-        "Tool allowing you to clean data you added to Wikidata. It will show you the data you added and with one click you'll revert your own edit.",
-      author: "Martin Urbanec",
-    },
-    {
-      header: "QuickStatements",
-      subHeading:
-        "Tool to edit Wikidata items, based on a simple set of text commands. The tool can add and remove statements, labels, descriptions and aliases; as well as add statements with optional qualifiers and sources.",
-      author: "Magnus Manske",
-    },
-    {
-      header: "Harvesting Data Refinery",
-      subHeading:
-        "Tool allowing you to clean data you added to Wikidata. It will show you the data you added and with one click you'll revert your own edit.",
-      author: "Martin Urbanec",
-    },
-    {
-      header: "Ranker",
-      subHeading:
-        "Tool to edit the rank of multiple Wikidata statements at once",
-      author: "Lucas Werkmeister",
-    },
-    {
-      header: "Mix'n'match",
-      subHeading:
-        "GLAM catalog/Wikidata matching tool; red link lists on steroids.",
-      author: "Magnus Manske",
-    },
-    {
-      header: "Name to Q",
-      subHeading: "Convert a batch of article names to Wikidata Q numbers",
-      author: "Taavi Väänänen",
-    },
-    {
-      header: "PetScan",
-      subHeading:
-        "Replacement for CatScan2, QuickIntersection, Creator, Autolist etc.",
-      author: "Magnus Manske",
-    },
-    {
-      header: "Duplicity",
-      subHeading:
-        "Find Wikipedia articles without associated Wikidata items, and match or create a new item",
-      author: "Magnus Manske",
-    },
-    {
-      header: "Wikidata Lexeme Forms",
-      subHeading:
-        "A tool to create Wikidata lexemes with a set of forms (e. g. declensions).",
-      author: "Lucas Werkmeister",
-    },
+  const toolsList = [
+    createTool(
+      "Wikidata Todo",
+      "Shows you little things you can do on Wikidata.",
+      "Magnus Manske"
+    ),
+    createTool(
+      "Find duplicate items",
+      "Find duplicate items on Wikidata, via labels/aliases.",
+      "Magnus Manske"
+    ),
+    createTool(
+      "The Wikidata Game",
+      "A set of games to quickly add statements to Wikidata.",
+      "Magnus Manske"
+    ),
+    createTool(
+      "ShExStatements",
+      "ShExStatements allows the users to generate entity schemas and shape expressions from simple CSV statements.",
+      "Jsamwrites"
+    ),
+    createTool(
+      "Harvesting Data Refinery",
+      "Tool allowing you to clean data you added to Wikidata. It will show you the data you added and with one click you'll revert your own edit.",
+      "Martin Urbanec"
+    ),
+    createTool(
+      "QuickStatements",
+      "Tool to edit Wikidata items, based on a simple set of text commands. The tool can add and remove statements, labels, descriptions and aliases; as well as add statements with optional qualifiers and sources.",
+      "Magnus Manske"
+    ),
+    createTool(
+      "Harvesting Data Refinery",
+      "Tool allowing you to clean data you added to Wikidata. It will show you the data you added and with one click you'll revert your own edit.",
+      "Martin Urbanec"
+    ),
+    createTool(
+      "Ranker",
+      "Tool to edit the rank of multiple Wikidata statements at once",
+      "Lucas Werkmeister"
+    ),
+    createTool(
+      "Mix'n'match",
+      "GLAM catalog/Wikidata matching tool; red link lists on steroids.",
+      "Magnus Manske"
+    ),
+    createTool(
+      "Name to Q",
+      "Convert a batch of article names to Wikidata Q numbers",
+      "Taavi Väänänen"
+    ),
+    createTool(
+      "PetScan",
+      "Replacement for CatScan2, QuickIntersection, Creator, Autolist etc.",
+      "Magnus Manske"
+    ),
+    createTool(
+      "Duplicity",
+      "Find Wikipedia articles without associated Wikidata items, and match or create a new item",
+      "Magnus Manske"
+    ),
+    createTool(
+      "Wikidata Lexeme Forms",
+      "A tool to create Wikidata lexemes with a set of forms (e. g. declensions).",
+      "Lucas Werkmeister"
+    ),
   ];
+
+  const navigate = useNavigate();
+
+  const [list, setList] = React.useState(valueList);
+
+  function handleRemove(tools) {
+    const newList = valueList.filter((row) => row.tools !== tools);
+
+    setList(newList);
+  }
+
+  const deleteTool = (t) => {
+    confirmAlert({
+      title: "Tool Delete",
+      message: "Do you want to delete " + t + "?",
+      buttons: [
+        {
+          label: "CANCEL",
+          onClick: () => {},
+          style: {
+            color: "#ffffff",
+            backgroundColor: "#2A6495",
+            fontWeight: "bold",
+          },
+        },
+        {
+          label: "DELETE",
+          onClick: () => handleRemove(t),
+          style: {
+            color: "#2A6495",
+            backgroundColor: "transparent",
+          },
+        },
+      ],
+    });
+  };
+
   return (
     <Box
       sx={{
@@ -136,16 +175,16 @@ function Record() {
           sx={{
             display: "flex",
             flexDirection: "row",
-           
+
             "& > :not(style)": {
               m: 1,
               width: 250,
               height: 150,
               marginLeft: 3,
               backgroundColor: "#D4E0EA",
-               "&:hover": {
+              "&:hover": {
                 background: "#f3f3f3",
-              }, 
+              },
             },
           }}
         >
@@ -201,7 +240,7 @@ function Record() {
             overflow: "auto",
           }}
         >
-          {rowsss.map((item, i) => (
+          {toolsList.map((item, i) => (
             <Paper
               sx={{
                 marginLeft: 2,
@@ -240,7 +279,7 @@ function Record() {
                   {item.header}
                 </Typography>
               </Box>
-             
+
               <TextField
                 id="outlined-multiline-static"
                 multiline
@@ -290,9 +329,14 @@ function Record() {
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 30 }}>
             <TableHead sx={{ backgroundColor: "#D4E0EA" }}>
-              <TableRow  sx={{ color: "#2A6495",  "&:hover": {
+              <TableRow
+                sx={{
+                  color: "#2A6495",
+                  "&:hover": {
                     background: "#f3f3f3",
-                  }, }}>
+                  },
+                }}
+              >
                 <TableCell
                   sx={{ color: "#2A6495", fontWeight: "bold", fontSize: 18 }}
                 >
@@ -300,8 +344,7 @@ function Record() {
                 </TableCell>
                 <TableCell
                   align="left"
-                  sx={{ color: "#2A6495", fontWeight: "bold", fontSize: 18 
-                   }}
+                  sx={{ color: "#2A6495", fontWeight: "bold", fontSize: 18 }}
                 >
                   Tools
                 </TableCell>
@@ -314,10 +357,16 @@ function Record() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rowsy.map((row) => (
-                <TableRow key={row.sn} sx={{ color: "#2A6495",  "&:hover": {
-                  background: "#f3f3f3",
-                }, }}>
+              {list.map((row) => (
+                <TableRow
+                  key={row.sn}
+                  sx={{
+                    color: "#2A6495",
+                    "&:hover": {
+                      background: "#f3f3f3",
+                    },
+                  }}
+                >
                   <TableCell component="th" scope="row">
                     {row.sn}
                   </TableCell>
@@ -331,6 +380,11 @@ function Record() {
                       }}
                     >
                       <Button
+                        onClick={() =>
+                          navigate("/edit", {
+                            title: row.tools,
+                          })
+                        }
                         sx={{
                           textDecoration: "underline",
                           textTransform: "none",
@@ -341,6 +395,7 @@ function Record() {
                         Edit
                       </Button>
                       <Button
+                        onClick={() => deleteTool(row.tools)}
                         sx={{
                           textDecoration: "underline",
                           textTransform: "none",

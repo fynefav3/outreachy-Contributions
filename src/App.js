@@ -91,6 +91,7 @@ function App() {
     const filteredList = filteredLists.filter((row)=>{
       return row.header.toLowerCase().includes(e.target.value.toLowerCase())
     });
+
     setDisplayRows(filteredList);
     toggleShow(true);
   }
@@ -126,7 +127,7 @@ function App() {
       <TextField
         id="margin-none"
         onChange={validation}
-        placeholder="Search Tools...."
+        placeholder ="Search Tools...."
         variant="standard"
         InputProps={{
           disableUnderline: true,
@@ -249,7 +250,7 @@ function App() {
                 </Box>
               </Box>
             ))}
-            {displayRows.length === 0 && (<p style={{color: "#2A6495", fontSize: 14, fontWeight: "bold" , textAlign:"center"}} >Tools not found, ensure that all words are spelt correctly.
+            {displayRows.length === 0 && (<p style={{color: "#2A6495", fontSize: 14, fontWeight: "bold" , textAlign:"center"}} >Oops! tools not found, ensure that all words are spelt correctly.
 </p>)}
           </List>
         </Box>

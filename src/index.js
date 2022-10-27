@@ -6,6 +6,7 @@ import Footer from "./component/Footer/Footer";
 import Header from "./component/Header/Header";
 import Leaderboard from "./component/Leaderboard/Leaderboard";
 import Record from "./component/Record/Record";
+import Edit from "./component/Record/Edit";
 import reportWebVitals from "./reportWebVitals";
 
 const Routing = () => {
@@ -17,6 +18,7 @@ const Routing = () => {
           <Route path="/" index element={<App />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/record" element={<Record />} />
+          <Route path="/edit" element={<Edit />} />
         </Routes>
         <Footer />
       </div>
