@@ -10,6 +10,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import List from "@mui/material/List";
 import Button from "@mui/material/Button";
+import Edit from "../Record/Edit";
 import TextField from "@mui/material/TextField";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
@@ -358,56 +359,19 @@ function Record() {
             </TableHead>
             <TableBody>
               {list.map((row) => (
-                <TableRow
-                  key={row.sn}
-                  sx={{
-                    color: "#2A6495",
-                    "&:hover": {
-                      background: "#f3f3f3",
-                    },
+                <ValueItem
+                  serial={row.sn}
+                  tools={row.tools}
+                  onEdit={() => {
+                    localStorage.setItem('item', row.tools);
+                    navigate("/edit", {
+                      state: row.tools,
+                    });
+                  }}                 
+                  onDelete={() => {
+                    deleteTool(row.tools);
                   }}
-                >
-                  <TableCell component="th" scope="row">
-                    {row.sn}
-                  </TableCell>
-                  <TableCell align="left">{row.tools}</TableCell>
-                  <TableCell align="center">
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Button
-                        onClick={() =>
-                          navigate("/edit", {
-                            title: row.tools,
-                          })
-                        }
-                        sx={{
-                          textDecoration: "underline",
-                          textTransform: "none",
-                          color: "#939393",
-                        }}
-                        variant="text"
-                      >
-                        Edit
-                      </Button>
-                      <Button
-                        onClick={() => deleteTool(row.tools)}
-                        sx={{
-                          textDecoration: "underline",
-                          textTransform: "none",
-                          color: "#8C1A11",
-                        }}
-                        variant="text"
-                      >
-                        Delete
-                      </Button>
-                    </Box>
-                  </TableCell>
-                </TableRow>
+                />
               ))}
             </TableBody>
           </Table>
@@ -416,5 +380,55 @@ function Record() {
     </Box>
   );
 }
+export function ValueItem(props) {
+  return (
+    <TableRow
+      // key={row.sn}
+      sx={{
+        color: "#2A6495",
+        "&:hover": {
+          background: "#f3f3f3",
+        },
+      }}
+    >
+      <TableCell component="th" scope="row">
+        {props.serial}
+      </TableCell>
+      <TableCell align="left">{props.tools}</TableCell>
+      <TableCell align="center">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            onClick={props.onEdit}
+            sx={{
+              textDecoration: "underline",
+              textTransform: "none",
+              color: "#939393",
+            }}
+            variant="text"
+          >
+            Edit
+          </Button>
+          <Button
+            onClick={props.onDelete}
+            sx={{
+              textDecoration: "underline",
+              textTransform: "none",
+              color: "#8C1A11",
+            }}
+            variant="text"
+          >
+            Delete
+          </Button>
+        </Box>
+      </TableCell>
+    </TableRow>
 
+  );
+}
 export default Record;
