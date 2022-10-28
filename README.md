@@ -61,5 +61,5 @@ npm install @mui/x-data-grid
 
 ### Installing the Dialog confirmation box
 npm i react-confirm-alert
-
+This works on the Delete button.
 
