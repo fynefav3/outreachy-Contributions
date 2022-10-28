@@ -10,7 +10,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import List from "@mui/material/List";
 import Button from "@mui/material/Button";
-// import Edit from "../Record/Edit";
 import TextField from "@mui/material/TextField";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
@@ -286,15 +285,13 @@ function Record() {
                 multiline
                 rows={3}
                 variant="standard"
-                inputProps={{
+                InputProps={{
+                  disableUnderline: true,
                   style: {
                     textAlign: "end",
                     fontSize: 12,
                   },
                   readOnly: true,
-                }}
-                InputProps={{
-                  disableUnderline: true,
                 }}
                 value={item.subHeading}
                 sx={{
@@ -363,11 +360,11 @@ function Record() {
                   serial={row.sn}
                   tools={row.tools}
                   onEdit={() => {
-                    localStorage.setItem('item', row.tools);
+                    localStorage.setItem("item", row.tools);
                     navigate("/edit", {
                       state: row.tools,
                     });
-                  }}                 
+                  }}
                   onDelete={() => {
                     deleteTool(row.tools);
                   }}
@@ -428,7 +425,6 @@ export function ValueItem(props) {
         </Box>
       </TableCell>
     </TableRow>
-
   );
 }
 export default Record;
