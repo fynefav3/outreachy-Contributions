@@ -10,7 +10,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import List from "@mui/material/List";
 import Button from "@mui/material/Button";
-import Edit from "../Record/Edit";
+// import Edit from "../Record/Edit";
 import TextField from "@mui/material/TextField";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";

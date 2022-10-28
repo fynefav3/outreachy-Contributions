@@ -3,12 +3,23 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 function Edit(props) {
-  const title = localStorage.getItem('item');
+  const title = localStorage.getItem("item");
+
+  const navigate = useNavigate();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    navigate("/record");
+  }
 
   return (
     <Box
+      component="form"
+      onSubmit={handleSubmit}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -60,6 +71,7 @@ function Edit(props) {
               marginLeft: 4,
               input: { color: "#2A6495", fontSize: 16 },
             }}
+            required
           />
         </Box>
         <Box
@@ -111,6 +123,7 @@ function Edit(props) {
               marginLeft: 4,
               input: { color: "#2A6495", fontSize: 16 },
             }}
+            required
           />
         </Box>
         <Box
@@ -165,6 +178,7 @@ function Edit(props) {
               marginLeft: 4,
               input: { color: "#2A6495", fontSize: 16 },
             }}
+            required
           />
         </Box>
         <Box
@@ -217,6 +231,7 @@ function Edit(props) {
               marginLeft: 4,
               input: { color: "#2A6495", fontSize: 16 },
             }}
+            required
           />
         </Box>
         <Box
@@ -268,6 +283,7 @@ function Edit(props) {
               marginLeft: 4,
               input: { color: "#2A6495", fontSize: 16 },
             }}
+            required
           />
         </Box>
         <Box
@@ -319,6 +335,7 @@ function Edit(props) {
               marginLeft: 4,
               input: { color: "#2A6495", fontSize: 16 },
             }}
+            required
           />
         </Box>
         <Box
@@ -370,6 +387,7 @@ function Edit(props) {
               marginLeft: 4,
               input: { color: "#2A6495", fontSize: 16 },
             }}
+            required
           />
         </Box>
         <Box
@@ -396,9 +414,9 @@ function Edit(props) {
             width: 200,
             marginTop: 5,
             fontSize: 20,
-            // marginRight: 2.5
           }}
           variant="contained"
+          type="submit"
         >
           SAVE
         </Button>
@@ -413,6 +431,7 @@ function Edit(props) {
             color: "black",
           }}
           variant="text"
+          type="reset"
         >
           CANCEL
         </Button>
