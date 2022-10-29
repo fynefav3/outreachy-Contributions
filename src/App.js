@@ -85,16 +85,14 @@ function App() {
   const [show, toggleShow] = React.useState(true);
   const [displayRows, setDisplayRows] = React.useState(filteredLists);
 
-  
-
   const validation = (e) => {
-    const filteredList = filteredLists.filter((row)=>{
-      return row.header.toLowerCase().includes(e.target.value.toLowerCase())
+    const filteredList = filteredLists.filter((row) => {
+      return row.header.toLowerCase().includes(e.target.value.toLowerCase());
     });
 
     setDisplayRows(filteredList);
     toggleShow(true);
-  }
+  };
 
   return (
     <Box
@@ -127,7 +125,7 @@ function App() {
       <TextField
         id="margin-none"
         onChange={validation}
-        placeholder ="Search Tools...."
+        placeholder="Search Tools...."
         variant="standard"
         InputProps={{
           disableUnderline: true,
@@ -184,7 +182,7 @@ function App() {
           >
             {displayRows.map((item, i) => (
               <Box
-              key={`${item.header}_${i}`}
+                key={`${item.header}_${i}`}
                 onClick={() =>
                   window.location.assign("https://toolhub.wikimedia.org/")
                 }
@@ -250,8 +248,19 @@ function App() {
                 </Box>
               </Box>
             ))}
-            {displayRows.length === 0 && (<p style={{color: "#2A6495", fontSize: 14, fontWeight: "bold" , textAlign:"center"}} >Oops! tools not found, ensure that all words are spelt correctly.
-</p>)}
+            {displayRows.length === 0 && (
+              <p
+                style={{
+                  color: "#2A6495",
+                  fontSize: 14,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+                Oops! tools not found, ensure that all words are spelt
+                correctly.
+              </p>
+            )}
           </List>
         </Box>
       )}

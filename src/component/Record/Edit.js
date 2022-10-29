@@ -60,7 +60,7 @@ function Edit(props) {
           />
           <TextField
             id="margin-none"
-            placeholder="Name"
+            placeholder="API URL"
             variant="standard"
             InputProps={{
               disableUnderline: true,
@@ -112,7 +112,7 @@ function Edit(props) {
           />
           <TextField
             id="margin-none"
-            placeholder="Title"
+            placeholder="Source Repository"
             variant="standard"
             InputProps={{
               disableUnderline: true,
@@ -165,9 +165,7 @@ function Edit(props) {
           />
           <TextField
             id="margin-none"
-            multiline
-            rows={3}
-            placeholder="Description"
+            placeholder="Translate URL"
             variant="standard"
             InputProps={{
               disableUnderline: true,
@@ -219,7 +217,7 @@ function Edit(props) {
           />
           <TextField
             id="margin-none"
-            placeholder="Url"
+            placeholder="Bug Tracker URL"
             variant="standard"
             type="url"
             InputProps={{
@@ -258,7 +256,7 @@ function Edit(props) {
               paddingLeft: 6,
               display: { xs: "none", sm: "block" },
             }}
-            alt="Authors"
+            alt="User Doc URL"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666803797/toolhub/authors_dgoqfz.png"
           />
           <Box
@@ -272,7 +270,7 @@ function Edit(props) {
           />
           <TextField
             id="margin-none"
-            placeholder="Authors (separated by comma)"
+            placeholder="Developer Docs URL"
             variant="standard"
             InputProps={{
               disableUnderline: true,
@@ -310,7 +308,7 @@ function Edit(props) {
               paddingLeft: 6,
               display: { xs: "none", sm: "block" },
             }}
-            alt="Bug Tracker"
+            alt="Feedback URL"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666803790/toolhub/bug_tracker_j4qzdz.png"
           />
           <Box
@@ -376,7 +374,7 @@ function Edit(props) {
           />
           <TextField
             id="margin-none"
-            placeholder="User Doc"
+            placeholder="Privacy POLICY URL"
             variant="standard"
             InputProps={{
               disableUnderline: true,

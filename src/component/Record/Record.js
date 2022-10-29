@@ -159,23 +159,25 @@ function Record() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        height: "100vh",
+        height: "100%",
       }}
     >
-      <Box
+      <List
         sx={{
           display: "flex",
-          width: "100%",
-          alignItems: "center",
-          justifyContent: "center",
+          displayFlex: "row",
+          // width: "100%",
+          // alignItems: "center",
+          // justifyContent: "center",
           marginTop: 10,
+          maxWidth: "100%",
+          overflow: "auto",
         }}
       >
         <Box
           sx={{
             display: "flex",
             flexDirection: "row",
-
             "& > :not(style)": {
               m: 1,
               width: 250,
@@ -230,7 +232,7 @@ function Record() {
             </Paper>
           ))}
         </Box>
-      </Box>
+      </List>
       <Box sx={{ width: "100%", marginTop: 10 }}>
         <List
           sx={{

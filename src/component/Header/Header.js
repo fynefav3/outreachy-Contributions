@@ -16,7 +16,7 @@ import Button from "@mui/material/Button";
 
 const Header = (props) => {
   const drawerWidth = 240;
-  
+
   const location = useLocation();
 
   const navItems = [
@@ -67,7 +67,11 @@ const Header = (props) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none", bgcolor: "#000" } }}
+            sx={{
+              mr: 2,
+              display: { sm: "none", bgcolor: "#000" },
+              backgroundColor: mobileOpen ? "#000" : "#D9D9D9",
+            }}
           >
             <MenuIcon />
           </IconButton>
@@ -108,13 +112,10 @@ const Header = (props) => {
                           color: "#8C1A11",
                           fontWeight: "bold",
                           textTransform: "none",
-                          
                         }
-                        
                       : {
                           color: "black",
                           textTransform: "none",
-                         
                         }),
                   }}
                 >
