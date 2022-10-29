@@ -374,7 +374,7 @@ function Edit(props) {
           />
           <TextField
             id="margin-none"
-            placeholder="Privacy POLICY URL"
+            placeholder="Privacy policy URL"
             variant="standard"
             InputProps={{
               disableUnderline: true,
