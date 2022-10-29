@@ -217,7 +217,7 @@ function Edit(props) {
           />
           <TextField
             id="margin-none"
-            placeholder="Bug Tracker URL"
+            placeholder="User docs URL"
             variant="standard"
             type="url"
             InputProps={{
