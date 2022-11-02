@@ -334,7 +334,7 @@ function App() {
                 xl: 0,
               },
               top: {
-                xs: "55%",
+                xs: "60%",
                 sm: 0,
                 md: 0,
                 lg: 0,
