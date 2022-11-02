@@ -118,8 +118,18 @@ function App() {
         <Box
           component="img"
           sx={{
-            height: 150,
-            width: 150,
+            height: {
+              xs: 40,
+              sm: 40,
+              md: 70,
+              lg: 150,
+            },
+            width: {
+              xs: 40,
+              sm: 40,
+              md: 100,
+              lg: 150,
+            },
           }}
           alt="Toolhub"
           src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1665694663/toolhub/Screenshot_2022-10-12_at_22.51_2_u0n8xh.png"
@@ -135,7 +145,12 @@ function App() {
               color: "black",
               flex: 1,
               paddingLeft: 4,
-              fontSize: 32,
+              fontSize: {
+                xs: 16,
+                sm: 16,
+                md: 20,
+                lg: 32,
+              },
               paddingBottom: 2,
               fontWeight: "w500",
             }}
@@ -147,7 +162,16 @@ function App() {
               color: "black",
               flex: 1,
               paddingLeft: 4,
-              fontSize: 18,
+              paddingBottom:{
+                xs: 2,
+                sm:2
+              },
+              fontSize: {
+                xs: 13,
+                sm: 13,
+                md: 16,
+                lg: 18,
+              },
             }}
           >
             Discover new tools, promote their use in your wiki community, help
@@ -173,7 +197,12 @@ function App() {
                 color: "black",
                 flex: 1,
                 paddingLeft: 4,
-                fontSize: 15,
+                fontSize: {
+                  xs: 13,
+                  sm: 13,
+                  md: 16,
+                  lg: 18,
+                },
               }}
             >
               0 tools last updated on Nov 2, 2022 5:08 PM

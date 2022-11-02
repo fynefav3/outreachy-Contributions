@@ -1,4 +1,4 @@
-The Homepage is where the list of available tools are searched for. The user searches for tools they want to contribute to and when tools are found they click on those tools and it takes them to an edit page where they add their contributions to.  
+The Homepage introduces the user about what toolhub does and what it is  all about, it is also where the list of available tools are searched for. The user searches for tools they want to contribute to and when tools are found they click on those tools and it takes them to an edit page where they add their contributions to.  
 On the Edit page the user fills the informations of all his edits properly including their URLs.
 
 The leaderboard  page allows the user to know who has done the highest edit in recent times.

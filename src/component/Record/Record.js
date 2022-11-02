@@ -6,7 +6,6 @@ import List from "@mui/material/List";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 
-
 function createTool(header, subHeading, author) {
   return {
     header,
@@ -20,7 +19,7 @@ function Record() {
     { value: 15, header: "Tools", subHeading: "(TOTAL)" },
     { value: 2, header: "Tools", subHeading: "(MISSING)" },
     { value: 12, header: "Tools", subHeading: "(EDITED)" },
-    { value: 15, header: "∑MISSING / ∑TOTAL", subHeading: "%" },
+    { value: 15, header: "∑Missing/∑Total", subHeading: "%" },
   ];
 
   const toolsList = [
@@ -115,7 +114,13 @@ function Record() {
             flexDirection: "row",
             "& > :not(style)": {
               m: 1,
-              width: 250,
+              width: {
+                xs: "100%",
+                sm: "50%",
+                md: "55%",
+                lg: "55%",
+                xl: "55%",
+              },
               height: 150,
               marginLeft: 3,
               backgroundColor: "#f3f3f3",
@@ -131,6 +136,8 @@ function Record() {
                 sx={{
                   display: "flex",
                   flexDirection: "row",
+                  width: 250,
+                  marginRight: 8,
                 }}
               >
                 <Typography
@@ -159,7 +166,8 @@ function Record() {
                   color: "black",
                   flex: 1,
                   paddingLeft: 2,
-                  fontSize: 20,
+                  paddingRight: 2,
+                  fontSize: 15,
                 }}
               >
                 {item.header}
@@ -179,12 +187,12 @@ function Record() {
         >
           {toolsList.map((item, i) => (
             <Paper
-            onClick={() => {
-              localStorage.setItem("item", JSON.stringify(item));
-              navigate("/tool", {
-                state: item,
-              });
-            }}
+              onClick={() => {
+                localStorage.setItem("item", JSON.stringify(item));
+                navigate("/tool", {
+                  state: item,
+                });
+              }}
               sx={{
                 marginLeft: 2,
                 padding: 2,
@@ -263,7 +271,7 @@ function Record() {
           marginTop: 10,
           marginLeft: 10,
           marginRight: 10,
-          marginBottom: 60,
+          marginBottom: 10,
           paddingBottom: 10,
         }}
       ></Box>

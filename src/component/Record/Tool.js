@@ -81,6 +81,7 @@ function Tool() {
         sx={{
           display: "flex",
           flexDirection: "row",
+          paddingTop: 4
         }}
       >
         <Box
@@ -89,7 +90,9 @@ function Tool() {
           sx={{
             width: 70,
             height: 70,
-          }}/>
+            marginLeft: 8
+          }}
+        />
 
         <Box
           sx={{
@@ -103,7 +106,7 @@ function Tool() {
               flex: 1,
               paddingLeft: 4,
               fontSize: 24,
-              fontWeight:"bold"
+              fontWeight: "bold",
             }}
           >
             {it.header}
@@ -114,7 +117,17 @@ function Tool() {
               flex: 1,
               paddingLeft: 4,
               fontSize: 16,
-              
+             paddingBottom: 2
+            }}
+          >
+            {it.subHeading}
+          </Typography>
+          <Typography
+            sx={{
+              color: "black",
+              flex: 1,
+              paddingLeft: 4,
+              fontSize: 16,
             }}
           >
             Author(s): {it.author}
