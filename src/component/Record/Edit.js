@@ -28,7 +28,19 @@ function Edit(props) {
         marginRight: 5,
       }}
     >
-      <Typography sx={{ fontSize: 60, paddingTop: 10, paddingBottom: 5 }}>
+      <Typography sx={{  fontSize: {
+              xs: 30,
+              sm: 30,
+              md: 40,
+              lg: 50,
+              xl: 60,
+            },  paddingTop: {
+              xs: 15,
+              sm: 15,
+              md: 12,
+              lg: 10,
+              xl: 10,
+            }, paddingBottom: 5 }}>
         {JSON.stringify(title)}
       </Typography>
       <Box
@@ -410,21 +422,21 @@ function Edit(props) {
             backgroundColor: "#3e68c5",
             height: {
               xs: 40,
-              sm: 30,
+              sm: 40,
               md: 40,
               lg: 60,
               xl: 60,
             },
             width: {
               xs: 200,
-              sm: 100,
-              md: 150,
+              sm: 200,
+              md: 200,
               lg: 200,
               xl: 200,
             },
             marginTop: 5,
             fontSize: {
-              xs: 14,
+              xs: 12,
               sm: 14,
               md: 18,
               lg: 20,
@@ -441,13 +453,13 @@ function Edit(props) {
           sx={{
             backgroundColor: "transparent",
             height: {
-              xs: 25,
-              sm: 25,
-              md: 30,
+              xs: 40,
+              sm: 40,
+              md: 60,
               lg: 60,
               xl: 60,
             },
-            width: 200,
+            width: 250,
             marginTop: 5,
             fontSize: {
               xs: 13,
