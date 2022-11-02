@@ -167,8 +167,8 @@ function App() {
                 sm:2
               },
               fontSize: {
-                xs: 13,
-                sm: 13,
+                xs: 0,
+                sm: 0,
                 md: 16,
                 lg: 18,
               },
