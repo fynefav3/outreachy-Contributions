@@ -408,24 +408,54 @@ function Edit(props) {
         <Button
           sx={{
             backgroundColor: "#3e68c5",
-            height: 60,
-            width: 200,
+            height: {
+              xs: 40,
+              sm: 30,
+              md: 40,
+              lg: 60,
+              xl: 60,
+            },
+            width: {
+              xs: 200,
+              sm: 100,
+              md: 150,
+              lg: 200,
+              xl: 200,
+            },
             marginTop: 5,
-            fontSize: 20,
+            fontSize: {
+              xs: 14,
+              sm: 14,
+              md: 18,
+              lg: 20,
+              xl: 20,
+            },
           }}
           variant="contained"
           type="submit"
         >
-          SAVE
+          PUBLISH CHANGES
         </Button>
 
         <Button
           sx={{
             backgroundColor: "transparent",
-            height: 60,
+            height: {
+              xs: 25,
+              sm: 25,
+              md: 30,
+              lg: 60,
+              xl: 60,
+            },
             width: 200,
             marginTop: 5,
-            fontSize: 20,
+            fontSize: {
+              xs: 13,
+              sm: 13,
+              md: 15,
+              lg: 20,
+              xl: 20,
+            },
             color: "black",
           }}
           variant="text"
