@@ -10,15 +10,18 @@ function Footer() {
         py={{ xs: 2, sm: "17px" }}
         color="#8C1A11"
         display="flex"
-        backgroundColor= "#ffffff"
-        justifyContent= "center"
-        sx={{marginTop: 'calc(10% + 60px)',
-position: 'fixed',
-bottom: 0,
-width: '100%'
-}}
+        backgroundColor="#ffffff"
+        justifyContent="center"
+        sx={{
+          marginTop: "calc(10% + 60px)",
+          position: "fixed",
+          bottom: 0,
+          width: "100%",
+        }}
       >
-        <p style={{justifyContent:"center", alignItems: "center"}}>Ihuoma Favour Agbaru &copy; {currentYear} </p>
+        <p style={{ justifyContent: "center", alignItems: "center" }}>
+          Ihuoma Favour Agbaru &copy; {currentYear}{" "}
+        </p>
       </Box>
     </footer>
   );

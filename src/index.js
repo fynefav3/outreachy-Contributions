@@ -7,6 +7,8 @@ import Header from "./component/Header/Header";
 import Leaderboard from "./component/Leaderboard/Leaderboard";
 import Record from "./component/Record/Record";
 import Edit from "./component/Record/Edit";
+import Tool from "./component/Record/Tool";
+
 import reportWebVitals from "./reportWebVitals";
 
 const Routing = () => {
@@ -19,6 +21,8 @@ const Routing = () => {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/record" element={<Record />} />
           <Route path="/edit" element={<Edit />} />
+          <Route path="/tool" element={<Tool />} />
+
         </Routes>
         <Footer />
       </div>

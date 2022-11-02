@@ -2,22 +2,10 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
 import List from "@mui/material/List";
-import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
 import { useNavigate } from "react-router-dom";
 
-function createData(sn, tools) {
-  return { sn, tools };
-}
 
 function createTool(header, subHeading, author) {
   return {
@@ -26,21 +14,6 @@ function createTool(header, subHeading, author) {
     author,
   };
 }
-
-const valueList = [
-  createData(1, "Wikidata Todo"),
-  createData(2, "Find duplicate items"),
-  createData(3, 'The Wikidata Game"'),
-  createData(4, "ShExStatements"),
-  createData(5, "Harvesting Data Refinery"),
-  createData(6, "QuickStatements"),
-  createData(7, "Ranker"),
-  createData(8, "Mix'n'match"),
-  createData(9, "Name to Q"),
-  createData(10, "PetScan"),
-  createData(11, "Duplicity"),
-  createData(12, "Wikidata Lexeme Forms"),
-];
 
 function Record() {
   const rows = [
@@ -117,42 +90,7 @@ function Record() {
       "Lucas Werkmeister"
     ),
   ];
-
   const navigate = useNavigate();
-
-  const [list, setList] = React.useState(valueList);
-
-  function handleRemove(tools) {
-    const newList = valueList.filter((row) => row.tools !== tools);
-
-    setList(newList);
-  }
-
-  const deleteTool = (t) => {
-    confirmAlert({
-      title: "Tool Delete",
-      message: "Do you want to delete " + t + "?",
-      buttons: [
-        {
-          label: "CANCEL",
-          onClick: () => {},
-          style: {
-            color: "#ffffff",
-            backgroundColor: "#2A6495",
-            fontWeight: "bold",
-          },
-        },
-        {
-          label: "DELETE",
-          onClick: () => handleRemove(t),
-          style: {
-            color: "#2A6495",
-            backgroundColor: "transparent",
-          },
-        },
-      ],
-    });
-  };
 
   return (
     <Box
@@ -166,9 +104,6 @@ function Record() {
         sx={{
           display: "flex",
           displayFlex: "row",
-          // width: "100%",
-          // alignItems: "center",
-          // justifyContent: "center",
           marginTop: 10,
           maxWidth: "100%",
           overflow: "auto",
@@ -183,9 +118,9 @@ function Record() {
               width: 250,
               height: 150,
               marginLeft: 3,
-              backgroundColor: "#D4E0EA",
+              backgroundColor: "#f3f3f3",
               "&:hover": {
-                background: "#f3f3f3",
+                background: "#3e68c5",
               },
             },
           }}
@@ -244,13 +179,19 @@ function Record() {
         >
           {toolsList.map((item, i) => (
             <Paper
+            onClick={() => {
+              localStorage.setItem("item", JSON.stringify(item));
+              navigate("/tool", {
+                state: item,
+              });
+            }}
               sx={{
                 marginLeft: 2,
                 padding: 2,
-                backgroundColor: "#D4E0EA",
+                backgroundColor: "#ffffff",
                 width: 400,
                 "&:hover": {
-                  background: "#f3f3f3",
+                  background: "#3e68c5",
                 },
               }}
             >
@@ -325,108 +266,9 @@ function Record() {
           marginBottom: 60,
           paddingBottom: 10,
         }}
-      >
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 30 }}>
-            <TableHead sx={{ backgroundColor: "#D4E0EA" }}>
-              <TableRow
-                sx={{
-                  color: "#2A6495",
-                  "&:hover": {
-                    background: "#f3f3f3",
-                  },
-                }}
-              >
-                <TableCell
-                  sx={{ color: "#2A6495", fontWeight: "bold", fontSize: 18 }}
-                >
-                  S/N
-                </TableCell>
-                <TableCell
-                  align="left"
-                  sx={{ color: "#2A6495", fontWeight: "bold", fontSize: 18 }}
-                >
-                  Tools
-                </TableCell>
-                <TableCell
-                  align="center"
-                  sx={{ color: "#2A6495", fontWeight: "bold", fontSize: 18 }}
-                >
-                  Action
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {list.map((row) => (
-                <ValueItem
-                  serial={row.sn}
-                  tools={row.tools}
-                  onEdit={() => {
-                    localStorage.setItem("item", row.tools);
-                    navigate("/edit", {
-                      state: row.tools,
-                    });
-                  }}
-                  onDelete={() => {
-                    deleteTool(row.tools);
-                  }}
-                />
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Box>
+      ></Box>
     </Box>
   );
 }
-export function ValueItem(props) {
-  return (
-    <TableRow
-      // key={row.sn}
-      sx={{
-        color: "#2A6495",
-        "&:hover": {
-          background: "#f3f3f3",
-        },
-      }}
-    >
-      <TableCell component="th" scope="row">
-        {props.serial}
-      </TableCell>
-      <TableCell align="left">{props.tools}</TableCell>
-      <TableCell align="center">
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
-          <Button
-            onClick={props.onEdit}
-            sx={{
-              textDecoration: "underline",
-              textTransform: "none",
-              color: "#939393",
-            }}
-            variant="text"
-          >
-            Edit
-          </Button>
-          <Button
-            onClick={props.onDelete}
-            sx={{
-              textDecoration: "underline",
-              textTransform: "none",
-              color: "#8C1A11",
-            }}
-            variant="text"
-          >
-            Delete
-          </Button>
-        </Box>
-      </TableCell>
-    </TableRow>
-  );
-}
+
 export default Record;

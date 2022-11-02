@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 
 function Edit(props) {
-  const title = localStorage.getItem("item");
+  const title = localStorage.getItem("itemEdit");
 
   const navigate = useNavigate();
 
@@ -331,7 +331,7 @@ function Edit(props) {
               display: "flex",
               width: "100%",
               marginLeft: 4,
-              input: { color: "#2A6495", fontSize: 16 },
+              input: { color: "#3e68c5", fontSize: 16 },
             }}
             required
           />
@@ -383,7 +383,7 @@ function Edit(props) {
               display: "flex",
               width: "100%",
               marginLeft: 4,
-              input: { color: "#2A6495", fontSize: 16 },
+              input: { color: "#3e68c5", fontSize: 16 },
             }}
             required
           />
@@ -407,7 +407,7 @@ function Edit(props) {
       >
         <Button
           sx={{
-            backgroundColor: "#2A6495",
+            backgroundColor: "#3e68c5",
             height: 60,
             width: 200,
             marginTop: 5,

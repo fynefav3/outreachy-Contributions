@@ -40,12 +40,13 @@ const Header = (props) => {
       <Divider />
       <List>
         {navItems.map((item, idx) => (
-          //dynamic routing, using the array properties as the route, either
-          <ListItem key={item.name} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item.name} />
-            </ListItemButton>
-          </ListItem>
+          <Link to={item.route} style={{ textDecoration: "none" }}>
+            <ListItem key={item.name} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={item.name} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
@@ -59,7 +60,7 @@ const Header = (props) => {
       <AppBar
         component="nav"
         elevation={0}
-        sx={{ bgcolor: "white", elevation: 0 }}
+        sx={{ bgcolor: "#3e68c5", elevation: 0 }}
       >
         <Toolbar>
           <IconButton
@@ -75,24 +76,8 @@ const Header = (props) => {
           >
             <MenuIcon />
           </IconButton>
-          <Box
-            component="img"
-            sx={{
-              height: 50,
-              display: { xs: "none", sm: "block" },
-            }}
-            alt="Toolhub"
-            src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1665694663/toolhub/Screenshot_2022-10-12_at_22.51_2_u0n8xh.png"
-          />
-          <Typography
-            sx={{
-              color: "black",
-              flex: 1,
-              paddingLeft: 2,
-            }}
-          >
-            Toolhub
-          </Typography>
+        
+          
           <Box
             component="div"
             sx={{
@@ -109,12 +94,12 @@ const Header = (props) => {
                   sx={{
                     ...(item.route === location.pathname
                       ? {
-                          color: "#8C1A11",
-                          fontWeight: "bold",
+                          color: "#ffffff",
+                          fontWeight: "w900",
                           textTransform: "none",
                         }
                       : {
-                          color: "black",
+                          color: "#ffffff",
                           textTransform: "none",
                         }),
                   }}
@@ -133,7 +118,7 @@ const Header = (props) => {
                         borderRadius: 4,
                         ...(item.route === location.pathname
                           ? {
-                              bgcolor: "#8C1A11",
+                              bgcolor: "#ffffff",
                             }
                           : {}),
                       }}
@@ -150,6 +135,7 @@ const Header = (props) => {
           container={container}
           variant="temporary"
           open={mobileOpen}
+          // onClick={}
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
