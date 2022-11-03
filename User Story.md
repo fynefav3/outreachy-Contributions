@@ -5,4 +5,4 @@ The leaderboard  page allows the user to know who has done the highest edit in r
 
 When the user toggles to the record page by clicking on Total tools, he sees the total number of tools available in toolhub, the number of missing tools, number of edited  tools and number of tools missing/ edited. This gives an insight of what he can contribute to. 
 
-When he clicks on the tools in the paper it takes him to a new page that allows him to make informed decision if he wants to  contribute by editin, browse through tools, view if tools are favorite or view the source codes. 
+When he clicks on the tools in the paper it takes him to a new page that allows him to make informed decision if he wants to  contribute by editing, browse through tools, view if tools are favorite or view the source codes. 
