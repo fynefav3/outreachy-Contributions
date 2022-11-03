@@ -55,8 +55,14 @@ function Edit(props) {
             sx={{
               height: 24,
               width: 26,
-              paddingLeft: 6,
-              display: { xs: "none", sm: "block" },
+              paddingLeft: {
+                xs: 2,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 6,
+              },
+              display: { xs: "block", sm: "block" },
             }}
             alt="Name"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666803832/toolhub/icon-park-outline_edit-name_cb1xik.png"
@@ -107,8 +113,14 @@ function Edit(props) {
             sx={{
               height: 24,
               width: 26,
-              paddingLeft: 6,
-              display: { xs: "none", sm: "block" },
+              paddingLeft: {
+                xs: 2,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 6,
+              },
+              display: { xs: "block", sm: "block" },
             }}
             alt="Title"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666813323/toolhub/pajamas_title_lcurh5.png"
@@ -159,8 +171,14 @@ function Edit(props) {
             sx={{
               height: 24,
               width: 26,
-              paddingLeft: 6,
-              display: { xs: "none", sm: "block" },
+              paddingLeft: {
+                xs: 2,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 6,
+              },
+              display: { xs: "block", sm: "block" },
             }}
             alt="Description"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666803819/toolhub/description_ygmic1.png"
@@ -212,8 +230,14 @@ function Edit(props) {
             sx={{
               height: 24,
               width: 26,
-              paddingLeft: 6,
-              display: { xs: "none", sm: "block" },
+              paddingLeft: {
+                xs: 2,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 6,
+              },
+              display: { xs: "block", sm: "block" },
             }}
             alt="Url"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666803857/toolhub/url_wrzloz.png"
@@ -265,8 +289,14 @@ function Edit(props) {
             sx={{
               height: 24,
               width: 26,
-              paddingLeft: 6,
-              display: { xs: "none", sm: "block" },
+              paddingLeft: {
+                xs: 2,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 6,
+              },
+              display: { xs: "block", sm: "block" },
             }}
             alt="User Doc URL"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666803797/toolhub/authors_dgoqfz.png"
@@ -317,8 +347,14 @@ function Edit(props) {
             sx={{
               height: 24,
               width: 26,
-              paddingLeft: 6,
-              display: { xs: "none", sm: "block" },
+              paddingLeft: {
+                xs: 2,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 6,
+              },
+              display: { xs: "block", sm: "block" },
             }}
             alt="Feedback URL"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666803790/toolhub/bug_tracker_j4qzdz.png"
@@ -369,8 +405,14 @@ function Edit(props) {
             sx={{
               height: 24,
               width: 26,
-              paddingLeft: 6,
-              display: { xs: "none", sm: "block" },
+              paddingLeft: {
+                xs: 2,
+                sm: 2,
+                md: 3,
+                lg: 4,
+                xl: 6,
+              },
+              display: { xs: "block", sm: "block" },
             }}
             alt="User"
             src="https://res.cloudinary.com/dl6pfjd5w/image/upload/v1666803866/toolhub/user_doc_b68kd0.png"

@@ -21,7 +21,7 @@ function Tool() {
           display: "flex",
           flexDirection: "row",
           paddingTop: 12,
-          justifyContent: "flex-end",
+          justifyContent: {xs:"flex-start", xl: "flex-end",},
           paddingRight: 4,
         }}
       >
@@ -32,10 +32,28 @@ function Tool() {
           }}
           sx={{
             backgroundColor: "#3e68c5",
-            height: 40,
-            width: 150,
+            height: {
+                xs: 26,
+                sm: 26,
+                md: 28,
+                lg: 40,
+                xl: 40,
+              },
+              width: {
+                xs: 120,
+                sm: 120,
+                md: 120,
+                lg: 130,
+                xl: 150,
+              },
             marginTop: 5,
-            fontSize: 16,
+            fontSize: {
+                xs: 12,
+                sm: 12,
+                md: 14,
+                lg: 16,
+                xl: 16,
+              },
             marginLeft: 1,
             marginRight: 1,
           }}
@@ -47,10 +65,27 @@ function Tool() {
         <Button
           sx={{
             backgroundColor: "#F5F5F5",
-            height: 40,
-            width: 150,
-            marginTop: 5,
-            fontSize: 16,
+            height:{xs: 26,
+            sm: 26,
+            md: 28,
+            lg: 40,
+            xl: 40,
+          },
+          width: {
+            xs: 120,
+            sm: 120,
+            md: 120,
+            lg: 130,
+            xl: 150,
+          },
+        marginTop: 5,
+        fontSize: {
+            xs: 12,
+            sm: 12,
+            md: 14,
+            lg: 16,
+            xl: 16,
+          },
             color: "black",
             marginLeft: 1,
 
@@ -64,13 +99,30 @@ function Tool() {
         <Button
           sx={{
             backgroundColor: "#F5F5F5",
-            height: 40,
-            width: 150,
+            height:{xs: 26,
+                sm: 26,
+                md: 28,
+                lg: 40,
+                xl: 40,
+              },
+              width: {
+                xs: 120,
+                sm: 120,
+                md: 120,
+                lg: 130,
+                xl: 150,
+              },
             marginTop: 5,
-            fontSize: 16,
+            fontSize: {
+                xs: 12,
+                sm: 12,
+                md: 14,
+                lg: 16,
+                xl: 16,
+              },
             color: "black",
-            marginLeft: 1,
-            marginRight: 1,
+            marginLeft: {xs: 0, xl: 1,},
+            marginRight: {xs: 0, xl: 1,},
           }}
           variant="text"
         >
@@ -90,7 +142,7 @@ function Tool() {
           sx={{
             width: 70,
             height: 70,
-            marginLeft: 8
+            marginLeft: {xs:4, xl:8}
           }}
         />
 
@@ -127,7 +179,7 @@ function Tool() {
               color: "black",
               flex: 1,
               paddingLeft: 4,
-              fontSize: 16,
+              fontSize: {xs:14, xl:16},
             }}
           >
             Author(s): {it.author}
@@ -136,10 +188,27 @@ function Tool() {
             <Button
               sx={{
                 backgroundColor: "#3E68C5",
-                height: 40,
-                width: 150,
+                height:{xs: 26,
+                    sm: 26,
+                    md: 28,
+                    lg: 40,
+                    xl: 40,
+                  },
+                  width: {
+                    xs: 120,
+                    sm: 120,
+                    md: 120,
+                    lg: 130,
+                    xl: 150,
+                  },
                 marginTop: 5,
-                fontSize: 16,
+                fontSize: {
+                    xs: 12,
+                    sm: 12,
+                    md: 14,
+                    lg: 16,
+                    xl: 16,
+                  },
                 color: "#FFFFFF",
                 marginLeft: 1,
 
@@ -152,10 +221,27 @@ function Tool() {
             <Button
               sx={{
                 backgroundColor: "#FFFFFF",
-                height: 40,
-                width: 150,
+                height:{xs: 26,
+                    sm: 26,
+                    md: 28,
+                    lg: 40,
+                    xl: 40,
+                  },
+                  width: {
+                    xs: 120,
+                    sm: 120,
+                    md: 120,
+                    lg: 130,
+                    xl: 150,
+                  },
                 marginTop: 5,
-                fontSize: 16,
+                fontSize: {
+                    xs: 12,
+                    sm: 12,
+                    md: 14,
+                    lg: 16,
+                    xl: 16,
+                  },
                 color: "#3E68C5",
                 marginLeft: 1,
 
