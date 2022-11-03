@@ -277,6 +277,7 @@ function App() {
         <TextField
           id="margin-none"
           onChange={validation}
+          aria-label=""
           placeholder="Search Toolhub..."
           variant="standard"
           InputProps={{

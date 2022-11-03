@@ -1,17 +1,24 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen , act} from '@testing-library/react';
 import App from './../App';
 import * as React from "react";
-import { Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 test('To confirm if the input form works', () => {
-  render(<App />);
+  act(() => {render(
+ <BrowserRouter>
+  <Routes>
+    <Route path ="/" element ={<App/>}/>
+    </Routes>
+    </BrowserRouter>
+)
+});
 
-  const textInput = screen.getByText("search toolhub...");
+  const textInput = screen.getByLabelText("");
   // expect(linkElement).toBeInTheDocument();
-  expect(textInput).toHaveValue('search-tools')
+  expect(textInput).toBeInTheDocument('search tools')
 });
-test("Input works when clicked", ()=>{
+// test("Input works when clicked", ()=>{
 
-});
+// });
 
