@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './../App';
 import * as React from "react";
+import { Router } from "react-router-dom";
 
 
 test('To confirm if the input form works', () => {
@@ -13,3 +14,4 @@ test('To confirm if the input form works', () => {
 test("Input works when clicked", ()=>{
 
 });
+
