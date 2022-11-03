@@ -1,13 +1,15 @@
-// import { render, screen } from '@testing-library/react';
-// import App from './../App';
+import { render, screen } from '@testing-library/react';
+import App from './../App';
+import * as React from "react";
 
-// test('To confirm if the input form works', () => {
-//   render(<App />);
 
-//   const textInput = screen.getByText("search-tools");
-//   // expect(linkElement).toBeInTheDocument();
-//   expect(textInput).toHaveValue('search-tools')
-// });
-// test("Input works when clicked", ()=>{
+test('To confirm if the input form works', () => {
+  render(<App />);
 
-// });
+  const textInput = screen.getByText("search toolhub...");
+  // expect(linkElement).toBeInTheDocument();
+  expect(textInput).toHaveValue('search-tools')
+});
+test("Input works when clicked", ()=>{
+
+});

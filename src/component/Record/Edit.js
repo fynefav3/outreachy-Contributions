@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 function Edit(props) {
   const title = localStorage.getItem("itemEdit");
 
-  const navigate = useNavigate();
+  let navigate = useNavigate();
+
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -473,8 +474,8 @@ function Edit(props) {
               xs: 200,
               sm: 200,
               md: 200,
-              lg: 200,
-              xl: 200,
+              lg: 250,
+              xl: 250,
             },
             marginTop: 5,
             fontSize: {
